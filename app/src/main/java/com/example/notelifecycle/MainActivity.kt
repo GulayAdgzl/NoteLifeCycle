@@ -49,6 +49,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
     
-
+companion object{
+    const val NEW_REQUEST_CODE = 1
+    const val EDIT_REQUEST_CODE = 2
+    const val NOTE_EXTRA = "note_extra"
  
 }
