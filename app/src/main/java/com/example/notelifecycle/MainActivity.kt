@@ -38,6 +38,17 @@ class MainActivity : AppCompatActivity() {
         
 
     }
+    override fun onActivityReult(requestCode:Int,resultCode:Int,data:Intent?){
+        super.onActivityResult(requestCode,resultCode,data)
+        if(resultCode == Activity.REULT_OK){
+            when(requestCode){
+                NEW_REQUEST_CODE,EDIT_REQUEST_CODE->{
+                    setupNotesList()
+                }
+            }
+        }
+    }
+    
 
  
 }
