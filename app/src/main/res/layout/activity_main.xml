@@ -11,13 +11,15 @@
         android:layout_height="wrap_content"
         android:textStyle="italic"/>
 
-    <EditText
-        android:id="@+id/noteEditText"
+    <Button
+        android:id="@+id/btnNewNote"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="top"
-        android:hint="Notunuzu buraya yazın..."
-        android:padding="8dp"/>
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewNotes"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>

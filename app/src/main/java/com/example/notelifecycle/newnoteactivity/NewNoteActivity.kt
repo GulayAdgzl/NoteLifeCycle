@@ -1,8 +1,10 @@
 package com.example.notelifecycle
 
 import Note
+import NoteViewModel
 import android.app.Activity
 import android.os.Bundle
+import androidx.activity.viewModels
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -37,7 +39,7 @@ class NewNoteActivity : AppCompatActivity() {
             currentNote?.let { note ->
                 etNoteTitle.setText(note.title)
                 etNoteContent.setText(note.content)
-                btnSave.text = getString(R.string.update_note)
+                btnSave.text = getString(R.string.next)
             }
 
             // Kaydet butonu
