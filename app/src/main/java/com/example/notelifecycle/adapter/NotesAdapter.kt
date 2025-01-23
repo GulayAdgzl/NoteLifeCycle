@@ -1,3 +1,7 @@
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+
 class NotesAdapter(
     private val notes: List<Note>,
     private val listener: (Note) -> Unit
@@ -6,8 +10,8 @@ class NotesAdapter(
     class NoteViewHolder(val binding: ItemNoteBinding) : RecyclerView.ViewHolder(binding.root)
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, 
-    viewType: Int): NotesViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup,
+                                    viewType: Int): NotesViewHolder {
       val binding=ItemNoteBinding.inflate(
         LayoutInflater.from(parent.context),parent,false)
         return NotesViewHolder(binding)

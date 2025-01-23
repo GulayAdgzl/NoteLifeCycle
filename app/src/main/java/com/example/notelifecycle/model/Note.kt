@@ -1,9 +1,12 @@
+import android.os.Parcel
+import android.os.Parcelable
+
 data class Note(
     val id:Long=0,
     val title: String,
     val content: String,
     val lastEditTime: String
-):Parcelable{
+): Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readLong(),
         parcel.readString().toString(),

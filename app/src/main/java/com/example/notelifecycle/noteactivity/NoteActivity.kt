@@ -1,6 +1,16 @@
-class NoteActivity:AppCompatActivity(){
-    private lateinit var noteEditText:EditText
-    private lateinit var lastEditTimeTextView:TextView
+import android.os.Bundle
+import android.util.Log
+import android.widget.EditText
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import com.example.notelifecycle.R
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
+
+class NoteActivity: AppCompatActivity(){
+    private lateinit var noteEditText: EditText
+    private lateinit var lastEditTimeTextView: TextView
     private var lastSavedNote:String=""
 
     companion object{
@@ -8,12 +18,12 @@ class NoteActivity:AppCompatActivity(){
         private const val EDIT_TIME_KEY="edit_time_key"
     }
 
-    override fun onCreate(savedInstanceState:Bundle?){
+    override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_note)
+        setContentView(R.layout.item_note)
 
-        noteEditText=findViewById(R.id.etNote)
-        lastEditTimeTextView=findViewById(R.id.tvLastEditTime)
+        noteEditText=findViewById(R.id.tvNoteTitle)
+        lastEditTimeTextView=findViewById(R.id.tvNoteDate)
 
         //kaydedilmiş durumu geri yükleme
         savedInstanceState?.let{
@@ -53,10 +63,12 @@ class NoteActivity:AppCompatActivity(){
         outState.putString(EDIT_TIME_KEY,lastEditTimeTextView.text.toString())
        Log.d("LifecycleDemo","onSaveInstanceState çağrıldı")
     }
-    override fun onDestory(){
+
+    override fun onDestroy() {
         super.onDestroy()
         Log.d("LifecycleDemo","onDestroy çağrıldı")
     }
+
     private fun updateLastEditTime() {
         val currentTime = SimpleDateFormat("HH:mm:ss", Locale.getDefault()).format(Date())
         lastEditTimeTextView.text = "Son düzenleme: $currentTime"
