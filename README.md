@@ -1,4 +1,4 @@
-# Not Alma Uygulaması
+# NoteLifeCycle
 
 ## Teknik Özellikler
 
@@ -119,10 +119,4 @@ fun insertNote_shouldSaveToDatabase() {
 ./gradlew assembleRelease
 ```
 
-## Minimum Gereksinimler
-- Android SDK 21+
-- Kotlin 1.5+
-- Android Studio Arctic Fox+
 
-## Lisans
-Bu proje MIT lisansı altında lisanslanmıştır.
